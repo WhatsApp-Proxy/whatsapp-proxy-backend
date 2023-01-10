@@ -1,4 +1,5 @@
-# WhatsApp Proxy Backend 
+# WhatsApp Proxy Backend
+
 WhatsApp Proxy Backend | Keeps track of all the proxy servers
 
 ## Routes
@@ -29,7 +30,6 @@ WhatsApp Proxy Backend | Keeps track of all the proxy servers
 	"isActive": true
 }
 ```
-
 
 ## How to run
 

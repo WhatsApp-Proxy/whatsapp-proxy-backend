@@ -35,6 +35,7 @@ app.use(function (_req, _res, next) {
   next(createError(404));
 });
 
+pingAllServers();
 setInterval(async () => {
   pingAllServers();
 }, TimerConfig.pingInterval);

@@ -14,6 +14,8 @@ export async function ping(ip: string, port: number): Promise<number | null> {
 
   let pingData: number | null = null;
 
+  log('Ping results for', ip, port, result);
+
   result.forEach((pingResult: tcpPingResultType) => {
     if (pingResult.ping != null) {
       return (pingData = Math.floor(pingResult.ping));
