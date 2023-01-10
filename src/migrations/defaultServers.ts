@@ -33,7 +33,7 @@ export const defaultServers: proxyServerSchemaType[] = [
     proxyPort: 5222,
     // discoveryPort: 8080,
     serverName: "Jaiden051's Proxy",
-    country: 'VK',
+    country: 'GB',
     pendingDeletion: false,
     createdBy: null,
   },
