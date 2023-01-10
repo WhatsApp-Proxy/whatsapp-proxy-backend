@@ -1,2 +1,31 @@
-# whatsapp-proxy-backend
-WhatsApp Proxy backend server
+# WhatsApp Proxy Backend 
+WhatsApp Proxy Backend | Keeps track of all the proxy servers
+
+## Routes
+
+- GET: `/server` - Returns a 200 OK response, list with all registered servers
+- GET: `/server/:id` - Returns a 200 OK response, more info about a server
+- POST: `/server/register`- Data:
+
+```json
+{
+	 "ipAddress": "IP",
+  "proxyPort": port,
+  "discoveryPort": DiscoveryServerPort,
+  "serverName": "Name",
+  "country": "Country Code",
+  "key": "Your discovery key (from .env or custom key)"
+}
+```
+
+- POST: `/key/register` - Data:
+
+```json
+{
+	"masterKey": "MASTER KEY from .env",
+	"key": "NEW KEY",
+	"maxUsages": Max Usages,
+	"serverNamePrefix": "PREFIX, nullable",
+	"isActive": true
+}
+```
