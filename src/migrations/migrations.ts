@@ -43,7 +43,7 @@ async function createProxyServers(keyId: any) {
     try {
       index++;
       server.createdBy = keyId;
-      server.serverName = ServerPrefix + server.serverName;
+      server.serverName = server.serverName;
       const newServer = new proxyServer(server);
       await newServer.save();
       log(`Added server ${server.serverName}, (${index}/${defaultServers.length})!`);
