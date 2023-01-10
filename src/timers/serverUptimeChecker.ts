@@ -7,14 +7,14 @@ export async function pingAllServers() {
   if (!allServers) return;
   allServers.forEach(async (server: proxyServerSchemaType) => {
     const pingData = await ping(server.ipAddress, server.proxyPort);
-    // if (!pingData && server.pendingDeletion) {
+    // if (pingData === null && server.pendingDeletion) {
     //   log(`Server ${server.serverName} is down! Removing it!`);
     //   await proxyServer.remove({ _id: server._id });
     // }
-    if (!pingData && !server.pendingDeletion) {
+    if (pingData === null && !server.pendingDeletion) {
       log(`Server ${server.serverName} is down! Marking it for deletion!`);
       await proxyServer.updateOne({ _id: server._id }, { pendingDeletion: true });
-    } else if (pingData && server.pendingDeletion) {
+    } else if (pingData !== null && server.pendingDeletion) {
       log(`Server ${server.serverName} is back up! Removing deletion mark!`);
       await proxyServer.updateOne({ _id: server._id }, { pendingDeletion: false });
     }
