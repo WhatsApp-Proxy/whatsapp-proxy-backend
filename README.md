@@ -38,7 +38,6 @@ WhatsApp Proxy Backend | Keeps track of all the proxy servers
 - Configure the port in the `docker-compose.yml` file if needed. (If you want to run the server on port 90 for example use the following value: `90:8080`)
 - Run `docker-compose up -d` to start the server
 
-
 ## Migrations
 
 - Run `yarn migrate` to run migrations

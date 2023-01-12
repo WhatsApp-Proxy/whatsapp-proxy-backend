@@ -5,6 +5,7 @@ import discoveryKey from '../models/discoveryKey';
 import { calculateUsage } from '../util/calculateUsage';
 import { ServerPrefix } from '../const/config';
 import log from 'fancy-log';
+import { findExistingProxy } from '../util/findExistingProxy';
 
 const router = express.Router();
 
@@ -58,6 +59,14 @@ router.post('/register', async function (req: Request, res: Response) {
     if (pingData === null) {
       res.status(500).json({ error: 'Server is down!', data: null });
       return;
+    }
+    const existingServer = await findExistingProxy(foundKey._id, req.body);
+    if (existingServer !== null) {
+      // update server with new ip
+      log(`Updating server ${existingServer.serverName} with new ip ${req.body.ipAddress}...`);
+      existingServer.ipAddress = req.body.ipAddress;
+      await existingServer.save();
+      return res.json({ data: existingServer, error: null });
     }
 
     const server = new proxyServer({
