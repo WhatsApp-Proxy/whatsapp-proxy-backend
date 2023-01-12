@@ -1,6 +1,6 @@
 {
   "name": "whatsapp-proxy-backend",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "WhatsApp Proxy Backend server | Provides a list with all proxies",
   "main": "dist/index.js",
   "scripts": {
