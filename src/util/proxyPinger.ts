@@ -6,12 +6,16 @@ import log from 'fancy-log';
 export async function ping(ip: string, port: number): Promise<number | null> {
   try {
     log(`Pinging: ${ip}:${port}...`);
-    const result: tcpPingResultType[] = await nodejsTcpPing.tcpPing({
-      attempts: TCPConfig.attempts,
-      host: ip,
-      port,
-      timeout: TCPConfig.timeout,
-    } as tcpPingType);
+    const result: tcpPingResultType[] = await nodejsTcpPing
+      .tcpPing({
+        attempts: TCPConfig.attempts,
+        host: ip,
+        port,
+        timeout: TCPConfig.timeout,
+      } as tcpPingType)
+      .catch((e: any): null => {
+        return null;
+      });
 
     let pingData: number | null = null;
 
