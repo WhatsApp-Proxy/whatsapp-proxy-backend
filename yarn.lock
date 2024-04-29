@@ -803,10 +803,10 @@
     "@types/qs" "*"
     "@types/serve-static" "*"
 
-"@types/fancy-log@^2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@types/fancy-log/-/fancy-log-2.0.0.tgz#dbaeb0955bbe14b0bf0cbeb6db0f15f22c412b68"
-  integrity sha512-g39Vp8ZJ3D0gXhhkhDidVvdy4QajkF7/PV6HGn23FMaMqE/tLC1JNHUeQ7SshKLsBjucakZsXBLkWULbGLdL5g==
+"@types/fancy-log@^2.0.2":
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/@types/fancy-log/-/fancy-log-2.0.2.tgz#1d08ed4582ffbd9b15584b4d109db3a3191d63e6"
+  integrity sha512-SXVJvqWjsl90VwBfp7w4iQ0iO+vxAjQImglcpwbV9GkqNoUD5/p9Wsgetl40F1WL7pzWFN/eZPTF1g5FZXJsIw==
 
 "@types/http-errors@^2.0.4":
   version "2.0.4"
