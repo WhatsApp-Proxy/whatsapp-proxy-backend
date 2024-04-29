@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/WhatsApp-Proxy/whatsapp-proxy-backend#readme",
   "devDependencies": {
-    "@types/express": "^4.17.15",
+    "@types/express": "^4.17.21",
     "@types/fancy-log": "^2.0.0",
     "@types/http-errors": "^2.0.4",
     "@types/node": "^18.11.18",
